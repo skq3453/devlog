@@ -1,11 +1,5 @@
 ## Get Stuff
 ```lua
---themes
-local Halloween = Color3.fromRGB(255, 60, 1) --october
-local Christmas = Color3.fromRGB(250, 0, 0) --chrtismas
-local July = Color3.fromRGB(0, 85, 255) --july
-local Regular = Color3.fromRGB(49, 0, 148)
-
 local Library = {}
 
 function Library:CreateWindow(title)
@@ -188,7 +182,7 @@ function Library:CreateWindow(title)
 
 		TabButton.Name = "Tab"
 		TabButton.Parent = Navigation
-		TabButton.BackgroundColor3 = Halloween
+		TabButton.BackgroundColor3 = Color3.fromRGB(49, 0, 148)
 		TabButton.BackgroundTransparency = 1.000
 		TabButton.BorderColor3 = Color3.fromRGB(0, 0, 0)
 		TabButton.BorderSizePixel = 0
@@ -335,7 +329,7 @@ function Library:CreateWindow(title)
 			callback(state)
 
 			if state then
-				tweenCheckboxBackgroundColor(Halloween)
+				tweenCheckboxBackgroundColor(Color3.fromRGB(49, 0, 148))
 			else
 				tweenCheckboxBackgroundColor(Color3.fromRGB(11, 11, 11))
 			end
@@ -344,130 +338,122 @@ function Library:CreateWindow(title)
 	
 	local UIS = game:GetService("UserInputService")
 
-	function Library:CreateSlider(title, TabParent, min, max, callback) 
-		local Slider = Instance.new("ImageButton")
-		local UICorner_8 = Instance.new("UICorner")
-		local UIStroke_5 = Instance.new("UIStroke")
-		local Title_4 = Instance.new("TextLabel")
-		local SliderBack = Instance.new("Frame")
-		local UICorner_9 = Instance.new("UICorner")
-		local Draggable = Instance.new("Frame")
-		local UICorner_10 = Instance.new("UICorner")
-		local Value = Instance.new("TextLabel")
+function Library:CreateSlider(title, TabParent, min, max, callback) 
+    local Slider = Instance.new("ImageButton")
+    local UICorner_8 = Instance.new("UICorner")
+    local UIStroke_5 = Instance.new("UIStroke")
+    local Title_4 = Instance.new("TextLabel")
+    local SliderBack = Instance.new("Frame")
+    local UICorner_9 = Instance.new("UICorner")
+    local Draggable = Instance.new("Frame")
+    local UICorner_10 = Instance.new("UICorner")
+    local Value = Instance.new("TextLabel")
 
-		Slider.Name = "Slider"
-		Slider.Parent = TabParent
-		Slider.BackgroundColor3 = Color3.fromRGB(7, 7, 7)
-		Slider.BorderColor3 = Color3.fromRGB(0, 0, 0)
-		Slider.BorderSizePixel = 0
-		Slider.Position = UDim2.new(0.0229729731, 0, 0.305084735, 0)
-		Slider.Size = UDim2.new(0, 353, 0, 47)
-		Slider.AutoButtonColor = false
+    -- Set up the slider appearance
+    Slider.Name = "Slider"
+    Slider.Parent = TabParent
+    Slider.BackgroundColor3 = Color3.fromRGB(7, 7, 7)
+    Slider.BorderColor3 = Color3.fromRGB(0, 0, 0)
+    Slider.BorderSizePixel = 0
+    Slider.Position = UDim2.new(0.0229729731, 0, 0.305084735, 0)
+    Slider.Size = UDim2.new(0, 353, 0, 47)
+    Slider.AutoButtonColor = false
 
-		UICorner_8.CornerRadius = UDim.new(0, 6)
-		UICorner_8.Parent = Slider
+    UICorner_8.CornerRadius = UDim.new(0, 6)
+    UICorner_8.Parent = Slider
 
-		UIStroke_5.Parent = Slider
-		UIStroke_5.Color = Color3.fromRGB(51, 51, 51)
-		UIStroke_5.Transparency = 0.500
-		UIStroke_5.Thickness = 1.500
+    UIStroke_5.Parent = Slider
+    UIStroke_5.Color = Color3.fromRGB(51, 51, 51)
+    UIStroke_5.Transparency = 0.500
+    UIStroke_5.Thickness = 1.500
 
-		Title_4.Name = "Title"
-		Title_4.Parent = Slider
-		Title_4.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-		Title_4.BackgroundTransparency = 1.000
-		Title_4.BorderColor3 = Color3.fromRGB(0, 0, 0)
-		Title_4.BorderSizePixel = 0
-		Title_4.Position = UDim2.new(0.0218811892, 0, 0.101362228, 0)
-		Title_4.Size = UDim2.new(0, 200, 0, 24)
-		Title_4.Font = Enum.Font.SourceSans
-		Title_4.Text = title
-		Title_4.TextColor3 = Color3.fromRGB(222, 222, 222)
-		Title_4.TextSize = 18.000
-		Title_4.TextXAlignment = Enum.TextXAlignment.Left
+    Title_4.Name = "Title"
+    Title_4.Parent = Slider
+    Title_4.BackgroundTransparency = 1.000
+    Title_4.Position = UDim2.new(0.0218811892, 0, 0.101362228, 0)
+    Title_4.Size = UDim2.new(0, 200, 0, 24)
+    Title_4.Font = Enum.Font.SourceSans
+    Title_4.Text = title
+    Title_4.TextColor3 = Color3.fromRGB(222, 222, 222)
+    Title_4.TextSize = 18.000
+    Title_4.TextXAlignment = Enum.TextXAlignment.Left
 
-		SliderBack.Name = "SliderBack"
-		SliderBack.Parent = Slider
-		SliderBack.BackgroundColor3 = Color3.fromRGB(21, 21, 21)
-		SliderBack.BorderColor3 = Color3.fromRGB(0, 0, 0)
-		SliderBack.BorderSizePixel = 0
-		SliderBack.Position = UDim2.new(0.0226628892, 0, 0.750383735, 0)
-		SliderBack.Size = UDim2.new(0, 338, 0, 5)
+    SliderBack.Name = "SliderBack"
+    SliderBack.Parent = Slider
+    SliderBack.BackgroundColor3 = Color3.fromRGB(21, 21, 21)
+    SliderBack.BorderColor3 = Color3.fromRGB(0, 0, 0)
+    SliderBack.Position = UDim2.new(0.0226628892, 0, 0.750383735, 0)
+    SliderBack.Size = UDim2.new(0, 338, 0, 5)
 
-		UICorner_9.Parent = SliderBack
+    UICorner_9.Parent = SliderBack
 
-		Draggable.Name = "Draggable"
-		Draggable.Parent = SliderBack
-		Draggable.BackgroundColor3 = Halloween
-		Draggable.BorderColor3 = Color3.fromRGB(0, 0, 0)
-		Draggable.BorderSizePixel = 0
-		Draggable.Size = UDim2.new(0, 233, 0, 5)
+    Draggable.Name = "Draggable"
+    Draggable.Parent = SliderBack
+    Draggable.BackgroundColor3 = Color3.fromRGB(49, 0, 148)
+    Draggable.Size = UDim2.new(0, 233, 0, 5)
 
-		UICorner_10.Parent = Draggable
+    UICorner_10.Parent = Draggable
 
-		Value.Name = "Value"
-		Value.Parent = Slider
-		Value.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
-		Value.BackgroundTransparency = 1.000
-		Value.BorderColor3 = Color3.fromRGB(0, 0, 0)
-		Value.BorderSizePixel = 0
-		Value.Position = UDim2.new(0.395818859, 0, 0.101362512, 0)
-		Value.Size = UDim2.new(0, 200, 0, 24)
-		Value.Font = Enum.Font.SourceSans
-		Value.Text = "0.1"
-		Value.TextColor3 = Color3.fromRGB(222, 222, 222)
-		Value.TextSize = 18.000
-		Value.TextXAlignment = Enum.TextXAlignment.Right
+    Value.Name = "Value"
+    Value.Parent = Slider
+    Value.BackgroundTransparency = 1.000
+    Value.Position = UDim2.new(0.395818859, 0, 0.101362512, 0)
+    Value.Size = UDim2.new(0, 200, 0, 24)
+    Value.Font = Enum.Font.SourceSans
+    Value.Text = "0.1"
+    Value.TextColor3 = Color3.fromRGB(222, 222, 222)
+    Value.TextSize = 18.000
+    Value.TextXAlignment = Enum.TextXAlignment.Right
 
-		local currentValue = min
-		local isDragging = false
-		local touchID = nil
+    local currentValue = min
+    local isDragging = false
+    local touchID = nil
 
-		local function UpdateSliderPosition()
-			local percentage = math.clamp((currentValue - min) / (max - min), 0, 1)
-			Value.Text = string.format("%.1f", currentValue)
-			Draggable.Size = UDim2.new(percentage, 0, 1, 0)
-			callback(currentValue)
-		end
+    local function UpdateSliderPosition()
+        local percentage = math.clamp((currentValue - min) / (max - min), 0, 1)
+        Value.Text = string.format("%.1f", currentValue)
+        Draggable.Size = UDim2.new(percentage, 0, 1, 0)
+        callback(currentValue)
+    end
 
-		local function StartDragging(input)
-			isDragging = true
-			if input.UserInputType == Enum.UserInputType.Touch then
-				touchID = input.UserInputIndex
-			end
-		end
+    local function StartDragging(input)
+        isDragging = true
+        if input.UserInputType == Enum.UserInputType.Touch then
+            touchID = input.UserInputIndex
+        end
+    end
 
-		local function UpdateDragging(input)
-			local inputPosition
-			if input.UserInputType == Enum.UserInputType.MouseMovement then
-				inputPosition = input.Position.X
-			elseif input.UserInputType == Enum.UserInputType.Touch then
-				inputPosition = input.Position.X
-			end
+    local function UpdateDragging(input)
+        local inputPosition
+        if input.UserInputType == Enum.UserInputType.MouseMovement then
+            inputPosition = input.Position.X
+        elseif input.UserInputType == Enum.UserInputType.Touch then
+            inputPosition = input.Position.X
+        end
 
-			if isDragging then
-				local sliderX = SliderBack.AbsolutePosition.X
-				local sliderWidth = SliderBack.AbsoluteSize.X
-				local newPercentage = math.clamp((inputPosition - sliderX) / sliderWidth, 0, 1)
-				currentValue = min + (newPercentage * (max - min))
-				currentValue = math.round(currentValue * 10) / 10
-				UpdateSliderPosition()
-			end
-		end
+        if isDragging then
+            local sliderX = SliderBack.AbsolutePosition.X
+            local sliderWidth = SliderBack.AbsoluteSize.X
+            local newPercentage = math.clamp((inputPosition - sliderX) / sliderWidth, 0, 1)
+            currentValue = min + (newPercentage * (max - min))
+            currentValue = math.round(currentValue * 10) / 10
+            UpdateSliderPosition()
+        end
+    end
 
-		local function StopDragging(input)
-			if input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch then
-				isDragging = false
-				touchID = nil
-			end
-		end
+    local function StopDragging(input)
+        if input.UserInputType == Enum.UserInputType.MouseButton1 or input.UserInputType == Enum.UserInputType.Touch then
+            isDragging = false
+            touchID = nil
+        end
+    end
 
-		Slider.MouseButton1Down:Connect(StartDragging)
-		UIS.InputChanged:Connect(UpdateDragging)
-		UIS.InputEnded:Connect(StopDragging)
+    Slider.MouseButton1Down:Connect(StartDragging)
+    UIS.InputChanged:Connect(UpdateDragging)
+    UIS.InputEnded:Connect(StopDragging)
 
-		UpdateSliderPosition()
-	end
+    UpdateSliderPosition()
+end
 	
 	function Library:CreateDropdown(title, TabParent, options, callback)
 		local Dropdown = Instance.new("ImageButton")
