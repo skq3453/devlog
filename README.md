@@ -22,8 +22,9 @@ function Library:CreateWindow(title)
 	local Content = Instance.new("Frame")
 	
 	UI.Name = "UI"
-	UI.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+	UI.Parent = game:GetService("Players").LocalPlayer.PlayerGui or game:GetService("CoreGui")
 	UI.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+	UI.ResetOnSpawn = false
 
 	Main.Name = "Main"
 	Main.Parent = UI
