@@ -209,6 +209,7 @@ function Library:CreateWindow(title)
 		Items.ScrollBarImageColor3 = Color3.fromRGB(0, 0, 0)
 		Items.ScrollBarThickness = 0
 		Items.Visible = false
+		Items.CanvasSize = UDim2.new(0, 0, 25, 0)
 
 		UIListLayout_2.Parent = Items
 		UIListLayout_2.HorizontalAlignment = Enum.HorizontalAlignment.Center
